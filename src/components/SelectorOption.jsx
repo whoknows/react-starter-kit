@@ -10,8 +10,11 @@ var SelectorOption = React.createClass({
     },
     render: function() {
         var cssclass = 'selectorOption' + (this.props.selected ? ' selectedOption' : '');
+
         return (
-            <div onClick={this.handleClick} data-value={this.props.value} className={cssclass} data-selected={this.props.selected}>{this.props.text}</div>
+            <div onClick={this.handleClick} data-value={this.props.value} className={cssclass} data-selected={this.props.selected}>
+                <span className="optionText">{this.props.text}</span>
+            </div>
         );
     }
 });

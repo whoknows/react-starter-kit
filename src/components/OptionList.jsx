@@ -25,8 +25,13 @@ var OptionList = React.createClass({
                 <SelectorOption value={option.value} selected={this.props.value.indexOf(option.value) !== -1} text={option.text} onSelect={this.handleSelect} />
             );
         }.bind(this));
+
+        var cssclass = 'OptionList';
+        if(this.props.display !== undefined){
+            cssclass += this.props.display ? '' : ' hidden';
+        }
         return (
-            <div className="OptionList">
+            <div className={cssclass}>
                 {optionNodes}
             </div>
         );
